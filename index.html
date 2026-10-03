@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Little Market</title>
+    <style>
+        :root {
+            --naranja-principal: #FF7A00;
+            --naranja-suave: #FF9E43;
+            --rosa-principal: #FF4081;
+            --rosa-claro: #FFE4EC;
+            --fondo: #FFF9F5;
+            --texto: #2C2C2C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--fondo);
+            color: var(--texto);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--naranja-principal), var(--rosa-principal));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--rosa-principal);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--rosa-claro);
+            color: var(--naranja-principal);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--naranja-principal);
+            font-size: 1.8rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 2px solid var(--rosa-claro);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 180px;
+            background-color: var(--rosa-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--rosa-principal);
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--texto);
+        }
+
+        .card-author {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-price {
+            font-size: 1.25rem;
+            color: var(--naranja-principal);
+            font-weight: bold;
+            margin-top: auto;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--rosa-principal), var(--naranja-suave));
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-top: 2px solid var(--rosa-claro);
+            margin-top: 2rem;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            nav {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            nav a {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Little Market</h1>
+        <p>El espacio donde los alumnos comparten su talento, productos y conocimiento</p>
+    </header>
+
+    <nav>
+        <a href="#manualidades">Manualidades</a>
+        <a href="#productos">Productos</a>
+        <a href="#asesorias">Asesorías Escolares</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Sección Manualidades -->
+        <h2 class="section-title" id="manualidades">🎨 Manualidades</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img">Foto de la Manualidad</div>
+                <div class="card-body">
+                    <h3 class="card-title">Pulseras Tejidas a Mano</h3>
+                    <p class="card-author">Por: Sofía M. (Grado 10)</p>
+                    <div class="card-price">$35 MXN</div>
+                    <button class="btn">Contactar Vendedor</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">Foto de la Manualidad</div>
+                <div class="card-body">
+                    <h3 class="card-title">Pinturas en Miniatura</h3>
+                    <p class="card-author">Por: Camilo R. (Grado 11)</p>
+                    <div class="card-price">$80 MXN</div>
+                    <button class="btn">Contactar Vendedor</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Productos -->
+        <h2 class="section-title" id="productos">🛍️ Productos</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img">Foto del Producto</div>
+                <div class="card-body">
+                    <h3 class="card-title">Separadores de Libros</h3>
+                    <p class="card-author">Por: Mateo G. (Grado 9)</p>
+                    <div class="card-price">$20 MXN</div>
+                    <button class="btn">Contactar Vendedor</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Asesorías -->
+        <h2 class="section-title" id="asesorias">📚 Asesorías Escolares</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img" style="background-color: #FFE0B2;">Asesoría de Ciencias</div>
+                <div class="card-body">
+                    <h3 class="card-title">Refuerzo de Matemáticas y Física</h3>
+                    <p class="card-author">Impartido por: Valentina P. (Grado 11)</p>
+                    <div class="card-price">$100 MXN / hora</div>
+                    <button class="btn">Reservar Clase</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-color: #FFE0B2;">Asesoría de Idiomas</div>
+                <div class="card-body">
+                    <h3 class="card-title">Tutoría de Inglés Básico</h3>
+                    <p class="card-author">Impartido por: Lucas D. (Grado 10)</p>
+                    <div class="card-price">$80 MXN / hora</div>
+                    <button class="btn">Reservar Clase</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 My Little Market - Plataforma escolar de emprendimiento</p>
+    </footer>
+
+</body>
+</html>
